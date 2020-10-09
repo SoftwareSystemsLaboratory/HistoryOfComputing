@@ -26,6 +26,18 @@ function Event(props) {
     }
   }
 
+
+  function handle_left(){
+    //todo: HANDLE LEFT
+    window.alert("RIGHT")
+  }
+  function handle_right(){
+    //todo: HANDLE RIGHT
+    window.alert("LEFT")
+  }
+  //var handle_right = handle_right()
+  //var handle_left = handle_left()
+
   return (
     <div onClick={onClick} className="Event">
       {showEventInFocus ? (
@@ -46,6 +58,8 @@ function Event(props) {
 
                             Sales of the Macintosh were strong from its initial release on January 24, 1984, and reached 70,000 units on May 3, 1984. Upon the release of its successor, the Macintosh 512K, it was rebranded as the Macintosh 128K. The computer is Model M0001."
           citation={["Tim Apple", "Michael Fassbender"]}
+          shift_left={() => handle_left()}
+          shift_right={() => handle_right()}
         />
       ) : null}
       <div className="Event-Container">

@@ -38,6 +38,15 @@ class EventFocus extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showEventInFocus: true, showEvent: false };
+    this.handle_left = this.handle_left.bind(this);
+    this.handle_right = this.handle_right.bind(this)
+  }
+
+  handle_left(event){
+    this.props.shift_left()
+  }
+  handle_right(event){
+    this.props.shift_right()
   }
 
   render() {
@@ -57,14 +66,14 @@ class EventFocus extends React.Component {
                     alt="alt"
                   />
                 </button>
-                <button className="vaporwaveBarContents">
+                <button className="vaporwaveBarContents" onClick={this.handle_left}>
                   <img
                     src={require("../images/button-left-v.svg")}
                     alt="Error"
                     className="leftRight"
                   />
                 </button>
-                <button className="vaporwaveBarContents">
+                <button className="vaporwaveBarContents" onClick={this.handle_right}>
                   <img
                     src={require("../images/button-right-v.svg")}
                     alt="burr"
@@ -121,14 +130,14 @@ class EventFocus extends React.Component {
                     alt="alt"
                   />
                 </button>
-                <button className="vaporwaveBarContents">
+                <button className="vaporwaveBarContents" onClick={this.handle_left}>
                   <img
                     src={require("../images/button-left-v.svg")}
                     alt="Error"
                     className="leftRight"
                   />
                 </button>
-                <button className="vaporwaveBarContents">
+                <button className="vaporwaveBarContents" onClick={this.handle_right}>
                   <img
                     src={require("../images/button-right-v.svg")}
                     alt="burr"
@@ -182,14 +191,14 @@ class EventFocus extends React.Component {
                     alt="alt"
                   />
                 </button>
-                <button className="vaporwaveBarContents">
+                <button className="vaporwaveBarContents" onClick={this.handle_left}>
                   <img
                     src={require("../images/button-left-v.svg")}
                     alt="Error"
                     className="leftRight"
                   />
                 </button>
-                <button className="vaporwaveBarContents">
+                <button className="vaporwaveBarContents" onClick={this.handle_right}>
                   <img
                     src={require("../images/button-right-v.svg")}
                     alt="burr"
