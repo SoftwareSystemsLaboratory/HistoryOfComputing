@@ -1,59 +1,151 @@
+#bigMenu {
+  width: 90%;
+  /* background-color: #a158fd; */
+  /* preventing scrollbars from popping up in navbar */
+  overflow-x: hidden;
+  overscroll-behavior-x: contain;
+  overflow-y: hidden;
+  margin: 0 auto;
+  /* border-radius: 25px; */
+  display: flex;
+  flex-direction: column;
+}
 
+#top-container {
+  /*background-color: #8d8bff;*/
+  display: flex;
+  border: 1px solid black;
+}
+#bottom-container {
+  background-color: white;
+  display: flex;
+  height: 32px;
+  flex-direction: row;
+  align-items: center;
+  /* justify-items: center; */
+  padding: 2px;
+  border: 1px solid black;
+  /* justify-content: center; */ /* justify-content: center; */
+}
+.menuItem {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  font-size: 14px;
+  width: 140px;
+  padding: 2px;
+  /* align-content: flex-end; */ /* align-content: flex-end; */
+  /* align-self: flex-end; */ /* align-self: flex-end; */
 
+  /* margin-bottom: 2px; */ /* margin-bottom: 2px; */
+}
+.gitItem {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  margin-left: auto;
+  margin-right: 20px;
+  padding-right: 0px;
+}
 
-#Nav-container {
-    width: 100%;
-    background-color: #3f51b5;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
+.menuImg {
+  display: flex;
+  align-self: flex-end;
+  /* position: relative; */
+  /* position:absolute; */
+  height: 20px;
+  /* height: 15px; */
+  /* margin-bottom: 0px; */
+  bottom: 0;
 }
-.Nav-linkButton {
-    /*background-color: #57336a;*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #3f51b5;
-    border: 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
-    /*fontSize: 14;*/
-    margin-right: 50px;
-    margin-left: 50px;
-    height: 60px;
-    width: 25%;
-    cursor: pointer;
-    transition: background-color 1s;
-    padding: 0;
+
+#mini-top-container {
+  display: flex;
+  flex-direction: row;
 }
-.Nav-anchor {
-    color: white;
-    font-size: 18px;
-    font-family: "Helvetica Neue", serif;
-    text-decoration: none;
-    display: inline-flex;
-    place-items: center;
-    height: 100%;
-    width: 100%;
+#toggleContainer {
+  display: none;
 }
-.Nav-linkButton:hover {
-    background-color: #303f9f;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+.menuItem {
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  /* align-content: flex-end; */
+  /* align-self: flex-end; */
+  /* margin-bottom: 2px; */
 }
-.iconButton {
-    background: none;
-    border: none;
-}
-#Nav-navbar {
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    place-items: center;
-}
+
 .Nav-icon {
-    width: 50px;
-    height: 50px;
+  width: 30px;
+  position: relative;
+  top: 10px;
+  height: 45px;
+  margin-left: 15px;
+  margin-top: 10px;
 }
-.Nav-title {
-    flex-grow: 1;
+.menuItemLink {
+  text-decoration: none;
+  /*color: #6666fa;*/
+  font-size: 1.2em;
+  padding: 2px;
+}
+
+.miniMenuItem {
+  text-decoration: none;
+  background-color: white;
+  text-align: center;
+  font-family: Chicago, sans-serif;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 2px;
+}
+
+.miniMenuItemDiv a:hover {
+  color: white;
+  background-color: #6764fd;
+}
+
+.miniMenuItemDiv {
+  border-bottom: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 24px;
+}
+.miniMenuItemDiv:hover {
+  background-color: #6764fd;
+}
+.miniMenuItemDiv:last-child {
+  border-bottom: transparent;
+}
+#hamIcon {
+  /* background: transparent; */
+  /* display: flex; */
+  height: 60px;
+  /* width: 30px; */
+  /* justify-self: flex-end; */
+}
+.hamLink {
+  /* background-color: rgb(86, 102, 116); */
+  display: flex;
+  /* justify-self: flex-end; */
+  margin-left: auto;
+  margin-right: 5px;
+
+  align-self: center;
+  width: 60px;
+}
+
+#smallMenu {
+  /* height: 100px; */
+  display: flex;
+  flex-direction: column;
+  /*background-color: #8d8bff;*/
+}
+.title {
+  font-family: "Futura", sans-serif;
+  /* font-style: italic; */
+  font-weight: normal;
+  font-size: 24px;
 }

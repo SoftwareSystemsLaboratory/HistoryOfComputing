@@ -5,21 +5,22 @@ import EventFocus from "../../EventFocus";
 
 function AppleEvent(props) {
     const [showEventInFocus, setShowEventFocus] = React.useState(false);
-    const [showEvent, setShowEvent] = React.useState(true);
+    // const [showEvent, setShowEvent] = React.useState(true);
+
 
     function updateEventInFocusTrue() {
         setShowEventFocus(true);
     }
 
-    const updateEventTrue = () => setShowEvent(false);
+    // const updateEventTrue = () => setShowEvent(false);
 
     function updateEventInFocusFalse() {
         setShowEventFocus(false);
     }
 
-    const updateEventFalse = () => setShowEvent(true);
+    // const updateEventFalse = () => setShowEvent(true);
 
-    let i = 0;
+    // let i = 0;
 
     function onClick() {
         // console.log(showEventInFocus);
@@ -36,16 +37,17 @@ function AppleEvent(props) {
                 <EventFocus
                     style={props.Type}
                     header={props.title}
-                    images={[props.images[1], props.images[2]]}
+                    EventFocusImages={[props.EventFocusImages[0], props.EventFocusImages[1]]}
                     body={props.body}
+                    type={props.type}
                     citations={[props.citations[0], props.citations[1]]}
-                />
+                    />
             ) : null}
             <div className="Apple-Event">
                 <div className="Apple-Event-Container Event-Container">
                     <a href={props.href} id={props.id} className="Apple-Event-container-link Event-container-link">
                         <figure className="Apple-Event-figure Event-figure">
-                            <img className="Apple-Event-image Event-image" src={props.images[0]} alt="Error"/>
+                            <img className="Apple-Event-image Event-image" src={props.TimelineImage} alt="Error"/>
                         </figure>
                         <div className="Apple-Event-body">
                             <span className="Apple-Event-date Event-date">{props.date}</span>
