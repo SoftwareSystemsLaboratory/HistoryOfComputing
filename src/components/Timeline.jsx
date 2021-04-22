@@ -9,6 +9,7 @@ import {ThemeStyles} from '../themeStyles'
 function Timeline(props) {
     const theme = useContext(ThemeStyles);
     let newdata;
+    let year;
     if (props.filter === '') {
         newdata = events.map(function (data) {
             return (
@@ -25,7 +26,8 @@ function Timeline(props) {
     else if (typeof props.filter === "number") {
         if (events.filter(data => data.Year === props.filter).length > 0) {
             newdata = events.filter(data => data.Year === props.filter).map((data) => {
-                    return (
+                year = data.Year;
+                return (
                         <Event theme={props.timelineFilter} filter={data["Filter"]} key={data["id"]} listId={data["id"]} date={data["Date"]} location={data["Location"]} title={data["Title"]}
                                TimelineImage={data["TimelineImage"]} EventFocusImages={data["EventFocusImages"]}
                                body={data["Body"]}
@@ -101,21 +103,27 @@ function Timeline(props) {
         if (props.filter === '') {
             return (<h2 style={{color: theme.headerColor}} id="Timeline-intro">Important events that summarize the History of Computing.</h2>)
         }
+        else if (props.filter === 'number') {
+            return (
+                <h2 style={{color: theme.headerColor}}  id="Timeline-intro">Important events that summarize the History of {year}.</h2>
+            )
+        }
         else {
-            return (<h2 style={{color: theme.headerColor}}  id="Timeline-intro">Important events that summarize the History of {props.filter}.</h2>)
+            return (<h2 style={{color: theme.headerColor}} id="Timeline-intro">Important events that summarize the History of Computing in the year of {props.filter}</h2>
+            )
         }
     }
 
     return (
         <div style={{backgroundImage: theme.backgroundImage}} id="Timeline">
-            <Navbar/>
-            {createTimeLineIntro()}
-            <Events />
-            {/*hack way to fix the timeline separator*/}
-            <div style={{marginBottom: '200px'}}/>
-            {/*hack way to fix the timeline separator*/}
+                <Navbar/>
+                {createTimeLineIntro()}
+                <Events />
+                {/*hack way to fix the timeline separator*/}
+                <div style={{marginBottom: '200px'}}/>
+                {/*hack way to fix the timeline separator*/}
 
-            <Footer/>
+                <Footer/>
             </div>
     )
 }

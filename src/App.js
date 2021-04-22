@@ -18,9 +18,19 @@ class App extends Component {
                     theme: themes.Apple
                 }));
             }
+            else if (themeGiven === 'Retro' || themeGiven === 'retro') {
+                this.setState(state => ({
+                    theme: themes.Retro
+                }));
+            }
             else if (themeGiven === 'Vaporwave' || themeGiven === 'vaporwave') {
                 this.setState(state => ({
                     theme: themes.Vaporwave
+                }));
+            }
+            else if (themeGiven === 'Modern' || themeGiven === 'modern') {
+                this.setState(state => ({
+                    theme: themes.Modern
                 }));
             }
             else if (themeGiven === 'IBM' || themeGiven === 'ibm') {

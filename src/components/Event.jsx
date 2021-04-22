@@ -75,7 +75,7 @@ class Event extends Component{
       else this.setState({
         background: style,
         borderLeft:  theme.borderLeftColor,
-        borderRight: theme.borderLeftColor,
+        borderRight: theme.borderRightColor,
         borderTop: theme.borderTopColor,
         borderBottom: theme.borderBottomColor,
       })
@@ -83,7 +83,7 @@ class Event extends Component{
     else this.setState({
       background: style,
       borderLeft:  theme.borderLeftColor,
-      borderRight: theme.borderLeftColor,
+      borderRight: theme.borderRightColor,
       borderTop: theme.borderTopColor,
       borderBottom: theme.borderBottomColor,
     })
@@ -110,10 +110,19 @@ class Event extends Component{
   }
   findBackdrop(backdrops) {
     console.log(this.props.filter);
+    console.log(this.props.theme);
     // For some reason use useState results in a compile error.
     if (this.props.filter === 'Apple') {
       // eslint-disable-next-line
       this.state.backdrop = backdrops['AppleBackdrop.svg']
+    }
+    else if (this.props.filter === 'Retro' || (typeof  this.props.theme === 'number' && (this.props.theme < 1980 && this.props.theme > 1940))) {
+      // eslint-disable-next-line
+      this.state.backdrop = backdrops['RetroBackdrop.svg']
+    }
+    else if (this.props.filter === 'Modern' || (typeof  this.props.theme === 'number' && (this.props.theme < 2000 && this.props.theme > 1980))) {
+      // eslint-disable-next-line
+      this.state.backdrop = backdrops['ModernBackdrop.svg']
     }
     else {
       // eslint-disable-next-line
@@ -131,7 +140,7 @@ class Event extends Component{
       return (
           <div className="Event-Container">
             <a style={{color: theme.textEventColor, backgroundImage: this.state.background, borderTop: this.state.borderTop,
-              borderBottom: this.state.borderBottom, borderRight: this.state.borderRight, borderLeft: this.state.borderRight}}
+              borderBottom: this.state.borderBottom, borderRight: this.state.borderRight, borderLeft: this.state.borderLeft}}
                onMouseEnter={() => this.onMouseEnterEvent(`url(${this.state.backdrop})`, theme, filter)}
                onMouseLeave={() => this.onMouseLeaveEvent()}
                ref={this.eventRef }

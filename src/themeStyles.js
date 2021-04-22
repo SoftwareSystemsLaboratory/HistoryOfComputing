@@ -9,8 +9,27 @@ import React from "react";
 
     BackgroundImage: For Gradient Backgrounds (I.E Timeline Gradient Fill)
 */
-export const themes = {
-    Vaporwave: {
+export const themes  = {
+    /* Context depending on the year */
+    Retro: {  /* FROM 1950 - 1980 */
+        foreground: "#000000",
+        background: "#ECDECD",
+
+        textColor: '#000000',
+        textNavbarColor: '#000000',
+        textFooterColor: '#000000',
+        headerColor: '#000000',
+
+        textEventColor: 'black',
+        borderLeftColor: '4mm ridge #b2b2b2',
+        borderRightColor: '4mm ridge #b2b2b2',
+        borderTopColor: '4mm ridge #b2b2b2',
+        borderBottomColor: '4mm ridge #b2b2b2',
+
+        backgroundImage: "linear-gradient(180deg, rgba(240, 222, 203, 0.75) 0%, rgba(111, 111, 111, 0.255) 100%)",
+        navbarBackground: "#ECDECD"
+    },
+    Vaporwave: { /* FROM 1980 - 2000 */
         foreground: "#8d8bff",
         background: "#ddd6ff",
 
@@ -28,6 +47,26 @@ export const themes = {
         backgroundImage: "linear-gradient(180deg, rgba(210, 174, 255, 0.1575) 0%, rgba(184, 225, 255, 0.3) 20.84%, rgba(197, 191, 255, 0.3) 45.83%, rgba(184, 225, 255, 0.3) 70.31%, rgba(197, 191, 255, 0.3075)",
         navbarBackground: "#8d8bff"
     },
+    Modern: {
+        foreground: "#000000",
+        background: "#ECDECD",
+
+        textColor: '#000000',
+        textNavbarColor: '#000000',
+        textFooterColor: '#000000',
+        headerColor: '#2C4477',
+
+        textEventColor: 'black',
+        borderLeftColor: '4mm ridge #D6F7FF',
+        borderRightColor: '4mm ridge #D6F7FF',
+        borderTopColor: '4mm ridge #b2b2b2',
+        borderBottomColor: '4mm ridge #b2b2b2',
+
+        backgroundImage: "linear-gradient(180deg, rgba(236, 246, 254, 0.3975) 0%, rgba(184, 225, 255, 0.45) 100%, rgba(184, 225, 255, 0.45) 100%)",
+        navbarBackground: "#ECDECD"
+    },
+
+    /* Companies */
     Microsoft: {
         foreground: "black",
         background: '#71BAE9',
@@ -76,5 +115,6 @@ export const themes = {
     }
 };
 
-export const ThemeStyles = React.createContext(themes.vaporwave);
+export const ThemeStyles = React.createContext({
+    theme: themes.Vaporwave,  toggleTheme: () => {},});
 export default themes;
