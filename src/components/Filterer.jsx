@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import './Filterer.css';
 // import {ThemeStyles} from '../themeStyles';
-
-import {InlineIcon } from '@iconify/react';
+import {InlineIcon} from '@iconify/react';
 import appleIcon from '@iconify/icons-openmoji/apple';
 import caretUpFilled from '@iconify/icons-ant-design/caret-up-filled';
 import caretDownOutlined from '@iconify/icons-ant-design/caret-down-outlined';
@@ -11,8 +10,6 @@ import bxlMicrosoft from '@iconify/icons-bx/bxl-microsoft';
 import "react-input-range/lib/css/index.css";
 import RangeInput from "./RangeInput";
 import ibmIcon from '@iconify/icons-cib/ibm';
-
-//TODO change based on context?
 
 class Filterer extends Component{
     constructor(props) {
@@ -60,8 +57,20 @@ class Filterer extends Component{
                 categoryElement.style.display = 'none';
                 icon.style.transform = 'rotateZ(0deg)';
             }
-            console.log(categoryElement.style.display === 'flex');
-            console.log(categoryElement.style.display);
+        }
+        if (category === 'Eras') {
+            let categoryElement = document.getElementById("Eras");
+
+            let icon = document.getElementById("EraIcon")
+
+            if (categoryElement.style.display === 'none' || categoryElement.style.display === '') { //empty string for initial state
+                categoryElement.style.display = 'flex';
+                icon.style.transform = 'rotateZ(180deg)';
+            }
+            else if (categoryElement.style.display === 'flex') {
+                categoryElement.style.display = 'none';
+                icon.style.transform = 'rotateZ(0deg)';
+            }
         }
         if (category === 'Year') {
             let categoryElement = document.getElementById("Year");
@@ -76,8 +85,6 @@ class Filterer extends Component{
                 categoryElement.style.display = 'none';
                 icon.style.transform = 'rotateZ(0deg)';
             }
-            console.log(categoryElement.style.display === 'flex');
-            console.log(categoryElement.style.display);
         }
     }
 
@@ -205,30 +212,28 @@ class Filterer extends Component{
                                         </div>
                                     </div>
                                     <div className="filtererCategoryType">
-                                        <div onClick={() => this.onClickFiltererType('IBM', 'IBM')} className="filtererCategoryTypeContainer">
-                                            <InlineIcon className="filtererCategoryIcon" height={32} width={32} icon={ibmIcon} />
+                                        <div onClick={() => this.onClickFiltererType('IBM', 'IBM')}
+                                             className="filtererCategoryTypeContainer">
+                                            <InlineIcon className="filtererCategoryIcon" height={32} width={32}
+                                                        icon={ibmIcon}/>
                                             <h4 className="filtererCategoryTypeHeader">IBM</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {/* EVENTS NOT IMPLEMENTED YET, NO FILTER NEEDED*/}
-                            {/*<div className="filtererCategoryContainer">*/}
-                            {/*    <div className="filtererCategoryHeaderContainer">*/}
-                            {/*        <h4 className="filtererCategory">Languages</h4>*/}
-                            {/*        <InlineIcon className="icon" onClick={() => this.changeFiltererType('Closed')}  height={16} width={16} icon={caretUpFilled} style={{color: '#ffff'}} />*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                            <div id="filtererCategoryContainerYear"className="filtererCategoryContainer">
+                            <div id="filtererCategoryContainerYear" className="filtererCategoryContainer">
                                 <div className="filtererCategoryHeaderContainer">
                                     <h4 className="filtererCategory">Year</h4>
-                                    <InlineIcon id="YearIcon" className="icon" onClick={() => this.showCategory('Year')}  height={16} width={16} icon={caretUpFilled} style={{color: '#ffff'}}/>
+                                    <InlineIcon id="YearIcon" className="icon" onClick={() => this.showCategory('Year')}
+                                                height={16} width={16} icon={caretUpFilled} style={{color: '#ffff'}}/>
                                 </div>
                                 <div id="Year" className="filtererCategoriesOpened">
                                     <div id="filtererContainerYear" className="filtererCategoryTypeContainer">
                                         <RangeInput handleYear={this.handleYear} year={this.state.year}/>
                                     </div>
-                                    <button id="yearSubmit" onClick={() => this.changeTimeLineFilter(this.state.year)}>Set Year</button>
+                                    <button id="yearSubmit"
+                                            onClick={() => this.changeTimeLineFilter(this.state.year)}>Set Year
+                                    </button>
                                 </div>
                             </div>
                             <div className="filtererShowAll">

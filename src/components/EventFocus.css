@@ -75,7 +75,7 @@
     width: 500px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin: 35% 0;
+    margin: 0 auto;
   }
   .eventBody {
     flex-direction: column;
@@ -103,7 +103,7 @@
     width: 650px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin: 35% 0;
+    margin: 0 auto;
   }
   .eventBody-image {
     padding: 3%;
@@ -123,8 +123,7 @@
     flex-direction: column;
     align-self: center;
     width: 1000px;
-    margin: 15% auto 5%;
-    flex-direction: column;
+    margin: 0 auto;
   }
   .eventBody-image {
     max-height: 200px;
@@ -138,6 +137,26 @@
     font-size: 24px;
     flex: 0;
   }
+}
+.showEventWrapper {
+  position: static; /* fixed position so that it will be put there irregarldess of where in the timeline user is at*/
+  /*width: 90%;*/
+  /*padding-top: 20px;*/
+  padding-bottom: 10%;
+  /* min-height: 100%;  */
+  /* might put min height back. depends on how it looks when I add stuff to page */
+  /*height: 30%;*/
+  /*margin: 5% auto 5%;*/
+  left: 0;
+  right: 0;
+  /* display: block; */
+  /* margin: 33%; */
+  /* background: linear-gradient(
+    180deg,
+    rgba(0, 147, 255, 0.4) 0%,
+    rgba(173, 95, 249, 0.4) 100%
+  ); */
+  /*transform: translateY(100%);*/
 }
 
 .showEventWrapper--open {
